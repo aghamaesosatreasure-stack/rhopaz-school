@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhophaz International High School - Education for a Brighter Tomorrow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0a2463;
+            --light-blue: #3e92cc;
+            --accent-blue: #5fa8d3;
+            --lightest-blue: #c9e4f5;
+            --white: #ffffff;
+            --gray: #f5f5f5;
+            --dark-gray: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-top {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        
+        .contact-info a:hover {
+            color: var(--lightest-blue);
+        }
+        
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 80px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            color: var(--light-blue);
+            font-style: italic;
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background-color: var(--light-blue);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .navbar ul li {
+            position: relative;
+        }
+        
+        .navbar ul li a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            padding: 15px 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .navbar ul li a:hover {
+            background-color: var(--primary-blue);
+        }
+        
+        .dropdown {
+            position: absolute;
+            background-color: var(--white);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1;
+            display: none;
+        }
+        
+        .dropdown a {
+            color: var(--primary-blue) !important;
+            padding: 12px 16px !important;
+            border-bottom: 1px solid var(--lightest-blue);
+        }
+        
+        .navbar ul li:hover .dropdown {
+            display: block;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 36, 99, 0.7), rgba(10, 36, 99, 0.7)), url('https://picsum.photos/seed/schoolbuilding/1500/800.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--light-blue);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--light-blue);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--gray);
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .feature-card:hover .feature-image img {
+            transform: scale(1.1);
+        }
+        
+        .feature-content {
+            padding: 20px;
+        }
+        
+        .feature-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+        
+        /* Academics Section */
+        .academics {
+            background-color: var(--gray);
+        }
+        
+        .academics-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .tab-btn {
+            background-color: var(--lightest-blue);
+            color: var(--primary-blue);
+            border: none;
+            padding: 10px 25px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .tab-btn.active {
+            background-color: var(--light-blue);
+            color: var(--white);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .tab-content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .subject-card {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Facilities Section */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .facility-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .facility-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .facility-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .facility-content {
+            padding: 20px;
+        }
+        
+        .facility-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--gray);
+        }
+        
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 60px;
+            color: var(--lightest-blue);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--gray);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item i {
+            color: var(--light-blue);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--lightest-blue);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--light-blue);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Styles */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .navbar {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--light-blue);
+                flex-direction: column;
+                padding-top: 60px;
+                transition: right 0.3s;
+                z-index: 1000;
+            }
+            
+            .navbar.active {
+                right: 0;
+            }
+            
+            .navbar ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .navbar ul li a {
+                padding: 15px 30px;
+            }
+            
+            .dropdown {
+                position: static;
+                display: none;
+                width: 100%;
+            }
+            
+            .navbar ul li:hover .dropdown {
+                display: none;
+            }
+            
+            .navbar ul li.active .dropdown {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .header-main {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .logo {
+                flex-direction: column;
+            }
+            
+            .logo img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <div>
+                        <i class="fas fa-phone"></i> Phone: +234 815 390 9634, +234 816 672 5843
+                    </div>
+                    <div>
+                        <a href="https://wa.me/2348153909634" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp: +234 815 390 9634
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="header-main">
+                <div class="logo">
+                    <img src="https://z-cdn-media.chatglm.cn/files/81ab8853-5ba6-482f-95d1-359b7c40db0a_Screenshot%20%2856%29.png?auth_key=1863076558-db9697042e764a279766a0b92f4f900d-0-b95b85bfe41f5e338941a5aa5727c8c6" alt="Rhophaz International High School Logo">
+                    <div class="logo-text">
+                        <h1>Rhophaz International High School</h1>
+                        <p>Education for a Brighter Tomorrow</p>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <div class="navbar" id="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li>
+                            <a href="#academics">Academics</a>
+                            <div class="dropdown">
+                                <a href="#nursery">Nursery</a>
+                                <a href="#primary">Primary</a>
+                                <a href="#secondary">Secondary</a>
+                            </div>
+                        </li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#admissions">Admissions</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Unveiling a Child's Potential</h2>
+                <p>Providing quality education from Nursery to Secondary level</p>
+                <a href="#admissions" class="btn">Enroll Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Rhophaz International High School</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to Rhophaz International High School, a premier educational institution located in Iyanomon, Sapele Road, Edo State, Nigeria. Our school is dedicated to providing quality education from nursery through secondary levels, nurturing young minds to reach their full potential.</p>
+                    <p>With our motto "Education for a Brighter Tomorrow," we are committed to creating a learning environment that fosters academic excellence, character development, and leadership skills. Our state-of-the-art facilities, including well-equipped laboratories, modern classrooms, and a spacious campus, provide the perfect setting for holistic education.</p>
+                    <p>At Rhophaz, we believe in unveiling each child's unique potential through personalized attention, innovative teaching methods, and a curriculum that prepares students for the challenges of the 21st century.</p>
+                    <a href="#contact" class="btn">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://picsum.photos/seed/schoolcampus/600/400.jpg" alt="Rhophaz International High School Campus">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Rhophaz</h2>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://picsum.photos/seed/qualityeducation/400/300.jpg" alt="Quality Education">
+                    </div>
+                    <div class="feature-content">
+                        <h3>Quality Education</h3>
+                        <p>Our curriculum is designed to meet international standards while incorporating local values and culture, ensuring students receive a well-rounded education.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://picsum.photos/seed/experiencedteachers/400/300.jpg" alt="Experienced Teachers">
+                    </div>
+                    <div class="feature-content">
+                        <h3>Experienced Teachers</h3>
+                        <p>Our team of dedicated educators are highly qualified and experienced, committed to nurturing each student's academic and personal growth.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://picsum.photos/seed/modernfacilities/400/300.jpg" alt="Modern Facilities">
+                    </div>
+                    <div class="feature-content">
+                        <h3>Modern Facilities</h3>
+                        <p>From our well-equipped science laboratories to our modern library and sports facilities, we provide an environment conducive to learning and development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics Section -->
+    <section class="academics" id="academics">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Academic Programs</h2>
+            </div>
+            <div class="academics-tabs">
+                <button class="tab-btn active" data-tab="nursery">Nursery</button>
+                <button class="tab-btn" data-tab="primary">Primary</button>
+                <button class="tab-btn" data-tab="secondary">Secondary</button>
+            </div>
+            
+            <div class="tab-content active" id="nursery">
+                <p>Our Nursery program provides a nurturing environment for young learners to develop foundational skills through play-based learning and structured activities.</p>
+                <div class="tab-content-grid">
+                    <div class="subject-card">
+                        <h3>Language Development</h3>
+                        <p>Building early literacy skills through storytelling, phonics, and interactive reading activities.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h3>Early Mathematics</h3>
+                        <p>Introducing basic mathematical concepts through hands-on activities and games.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h3>Creative Arts</h3>
+                        <p>Encouraging self-expression through drawing, painting, music, and movement.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h3>Social Development</h3>
+                        <p>Fostering social skills, emotional intelligence, and positive peer interactions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="primary">
+                <p>Our Primary program builds on the foundation established in Nursery, focusing on developing core academic skills while nurturing creativity and critical thinking.</p>
+                <div class="tab-content-grid">
+                    <div class="subject-card">
+                        <h3>English Language</h3>
+                        <p>Developing reading, writing, speaking, and listening skills through a comprehensive language program.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h3>Mathematics</h3>
+                        <p>Building mathematical proficiency through problem-solving and practical applications.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h3>Science</h3>
+                        <p>Exploring the natural world through hands-on experiments and inquiry-based learning.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h3>Social Studies</h3>
+                        <p>Understanding history, geography, and civic responsibility through engaging lessons.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="secondary">
+                <p>Our Secondary program prepares students for higher education and future careers with a rigorous curriculum and opportunities for specialization.</p>
+                <div class="tab-content-grid">
+                    <div class="subject-card">
+                        <h3>Sciences</h3>
+                        <p>Comprehensive programs in Biology, Chemistry, Physics, and Computer Science with well-equipped laboratories.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h3>Humanities</h3>
+                        <p>Exploring Literature, History, Geography, and Economics to develop critical thinking and cultural awareness.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h3>Mathematics</h3>
+                        <p>Advanced mathematical concepts including Algebra, Geometry, Trigonometry, and Calculus.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h3>Languages</h3>
+                        <p>Proficiency in English language with opportunities to learn additional languages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Facilities</h2>
+            </div>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="https://picsum.photos/seed/classrooms/400/300.jpg" alt="Modern Classrooms">
+                    </div>
+                    <div class="facility-content">
+                        <h3>Modern Classrooms</h3>
+                        <p>Spacious, well-ventilated classrooms equipped with modern teaching aids to facilitate effective learning.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="https://picsum.photos/seed/sciencelabs/400/300.jpg" alt="Science Laboratories">
+                    </div>
+                    <div class="facility-content">
+                        <h3>Science Laboratories</h3>
+                        <p>Well-equipped laboratories for Physics, Chemistry, and Biology, providing hands-on learning experiences.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="https://picsum.photos/seed/computerlab/400/300.jpg" alt="Computer Laboratory">
+                    </div>
+                    <div class="facility-content">
+                        <h3>Computer Laboratory</h3>
+                        <p>State-of-the-art computer lab with internet access to develop digital literacy and technology skills.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="https://picsum.photos/seed/library/400/300.jpg" alt="Library">
+                    </div>
+                    <div class="facility-content">
+                        <h3>Library</h3>
+                        <p>A well-stocked library with a diverse collection of books, periodicals, and digital resources.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="https://picsum.photos/seed/sportsfacilities/400/300.jpg" alt="Sports Facilities">
+                    </div>
+                    <div class="facility-content">
+                        <h3>Sports Facilities</h3>
+                        <p>Extensive sports facilities including playgrounds, courts, and fields for physical development.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="https://picsum.photos/seed/artsroom/400/300.jpg" alt="Arts Room">
+                    </div>
+                    <div class="facility-content">
+                        <h3>Arts Room</h3>
+                        <p>Dedicated spaces for visual and performing arts to nurture creativity and self-expression.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Parents Say</h2>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>Rhophaz International High School has transformed my child's academic journey. The dedicated teachers and excellent facilities have helped unlock my child's full potential.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/parent1/50/50.jpg" alt="Parent" class="author-image">
+                        <div class="author-info">
+                            <h4>Mrs. Adeola Johnson</h4>
+                            <p>Parent</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>The emphasis on both academic excellence and character development at Rhophaz is remarkable. My children have not only excelled in their studies but have also grown into responsible individuals.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/parent2/50/50.jpg" alt="Parent" class="author-image">
+                        <div class="author-info">
+                            <h4>Mr. Chidi Eze</h4>
+                            <p>Parent</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>The well-equipped science laboratories and modern teaching methods at Rhophaz have prepared my daughter for a future in STEM. I'm grateful for the quality education she's receiving.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/parent3/50/50.jpg" alt="Parent" class="author-image">
+                        <div class="author-info">
+                            <h4>Mrs. Funke Adebayo</h4>
+                            <p>Parent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section id="admissions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admissions</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Join the Rhophaz Family</h3>
+                    <p>Admission is open to students from Nursery through Secondary levels. Our admission process is designed to be straightforward and transparent, ensuring a smooth transition for your child into our school community.</p>
+                    <h4>Admission Process:</h4>
+                    <ol>
+                        <li>Obtain an application form from the school office or download from our website</li>
+                        <li>Submit the completed form with required documents</li>
+                        <li>Attend an assessment/interview session</li>
+                        <li>Receive admission decision</li>
+                        <li>Complete registration and fee payment</li>
+                    </ol>
+                    <p>For more information about admission requirements, fees, and deadlines, please contact our admissions office.</p>
+                    <a href="#contact" class="btn">Contact Admissions</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://picsum.photos/seed/admissions/600/400.jpg" alt="Admissions">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Iyanomon, Sapele Road, Edo State, Nigeria</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone Numbers</h4>
+                            <p>+234 815 390 9634</p>
+                            <p>+234 816 672 5843</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+234 815 390 9634</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@rhophazinternationalschool.edu.ng</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>School Hours</h4>
+                            <p>Monday - Friday: 7:30 AM - 3:30 PM</p>
+                            <p>Saturday: 8:00 AM - 1:00 PM (for special activities)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Rhophaz International High School</h3>
+                    <p>Education for a Brighter Tomorrow</p>
+                    <p>Unveiling a child's potential through quality education from Nursery to Secondary level.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#academics">Academics</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#admissions">Admissions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Programs</h3>
+                    <ul>
+                        <li><a href="#nursery">Nursery</a></li>
+                        <li><a href="#primary">Primary</a></li>
+                        <li><a href="#secondary">Secondary</a></li>
+                        <li><a href="#extracurricular">Extracurricular Activities</a></li>
+                        <li><a href="#summerprogram">Summer Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Iyanomon, Sapele Road, Edo State, Nigeria</li>
+                        <li><i class="fas fa-phone"></i> +234 815 390 9634</li>
+                        <li><i class="fas fa-phone"></i> +234 816 672 5843</li>
+                        <li><i class="fab fa-whatsapp"></i> +234 815 390 9634</li>
+                        <li><i class="fas fa-envelope"></i> info@rhophazinternationalschool.edu.ng</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Rhophaz International High School. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            document.getElementById('navbar').classList.toggle('active');
+        });
+
+        // Tab Functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('navbar').classList.remove('active');
+                }
+            });
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ASubject: ${subject}%0AMessage: ${message}`;
+            
+            // Open WhatsApp with the message
+            window.open(`https://wa.me/2348153909634?text=${whatsappMessage}`, '_blank');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Scroll to Top Button
+        window.addEventListener('scroll', function() {
+            const scrollToTop = document.querySelector('.scroll-to-top');
+            
+            if (window.pageYOffset > 300) {
+                if (!scrollToTop) {
+                    const button = document.createElement('button');
+                    button.className = 'scroll-to-top';
+                    button.innerHTML = '<i class="fas fa-arrow-up"></i>';
+                    button.style.cssText = `
+                        position: fixed;
+                        bottom: 30px;
+                        right: 30px;
+                        width: 50px;
+                        height: 50px;
+                        background-color: var(--light-blue);
+                        color: white;
+                        border: none;
+                        border-radius: 50%;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                        z-index: 1000;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                        transition: all 0.3s;
+                    `;
+                    
+                    button.addEventListener('click', function() {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                    
+                    button.addEventListener('mouseenter', function() {
+                        this.style.backgroundColor = 'var(--primary-blue)';
+                    });
+                    
+                    button.addEventListener('mouseleave', function() {
+                        this.style.backgroundColor = 'var(--light-blue)';
+                    });
+                    
+                    document.body.appendChild(button);
+                }
+            } else if (scrollToTop) {
+                scrollToTop.remove();
+            }
+        });
+    </script>
+</body>
+</html>
